@@ -11,22 +11,24 @@ import {
 import appCss from "../styles.css?url";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { rootContent } from "@/data/root/content";
+import { errorsContent } from "@/data/errors/content";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <div className="text-xs uppercase tracking-[0.25em] text-accent">404</div>
-        <h1 className="mt-4 font-serif text-3xl text-primary">Página não encontrada</h1>
-        <p className="mt-3 text-sm text-muted-foreground">
-          O caminho que você procura não existe ou foi movido.
-        </p>
+        <div className="text-xs uppercase tracking-[0.25em] text-accent">
+          {errorsContent.notFound.eyebrow}
+        </div>
+        <h1 className="mt-4 font-serif text-3xl text-primary">{errorsContent.notFound.title}</h1>
+        <p className="mt-3 text-sm text-muted-foreground">{errorsContent.notFound.description}</p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-secondary"
           >
-            Voltar ao início
+            {errorsContent.notFound.backButton}
           </Link>
         </div>
       </div>
@@ -41,10 +43,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-serif text-2xl text-primary">Algo não carregou</h1>
-        <p className="mt-3 text-sm text-muted-foreground">
-          Tente novamente em instantes ou volte ao início.
-        </p>
+        <h1 className="font-serif text-2xl text-primary">{errorsContent.general.title}</h1>
+        <p className="mt-3 text-sm text-muted-foreground">{errorsContent.general.description}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
@@ -53,13 +53,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-secondary"
           >
-            Tentar novamente
+            {errorsContent.general.retryButton}
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted"
           >
-            Início
+            {errorsContent.general.homeButton}
           </a>
         </div>
       </div>
@@ -69,39 +69,26 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-    title: "Caverna de Adulão — Centro de Reabilitação",
+    title: rootContent.meta.title,
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         name: "description",
-        content:
-          "Centro cristão de reabilitação que acolhe homens em situação de dependência química, oferecendo tratamento, discipulado e reinserção social.",
+        content: rootContent.meta.description,
       },
-      { name: "author", content: "Caverna de Adulão" },
-      { property: "og:title", content: "Caverna de Adulão — Centro de Reabilitação" },
+      { name: "author", content: rootContent.meta.author },
+      { property: "og:title", content: rootContent.meta.ogTitle },
       {
         property: "og:description",
-        content:
-          "Refúgio, restauração e nova vida. Conheça o trabalho do Centro de Reabilitação Caverna de Adulão.",
+        content: rootContent.meta.ogDescription,
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Caverna de Adulão" },
-      { name: "twitter:title", content: "Caverna de Adulão — Centro de Reabilitação" },
-      {
-        name: "description",
-        content:
-          "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais",
-      },
-      {
-        property: "og:description",
-        content:
-          "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais",
-      },
+      { property: "og:site_name", content: rootContent.meta.ogSiteName },
+      { name: "twitter:title", content: rootContent.meta.twitterTitle },
       {
         name: "twitter:description",
-        content:
-          "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais",
+        content: rootContent.meta.twitterDescription,
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -115,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang={rootContent.lang}>
       <head>
         <title>Caverna de Adulão</title>
         <HeadContent />

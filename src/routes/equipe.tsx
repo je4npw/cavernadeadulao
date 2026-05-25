@@ -1,16 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
+import { equipeContent } from "@/data/equipe/content";
 
 export const Route = createFileRoute("/equipe")({
   head: () => ({
     meta: [
-      { title: "Equipe — Caverna de Adulão" },
+      { title: equipeContent.meta.title },
       {
         name: "description",
-        content: "Coordenação, voluntários e conselho espiritual do Centro de Reabilitação.",
+        content: equipeContent.meta.description,
       },
-      { property: "og:title", content: "Equipe — Caverna de Adulão" },
-      { property: "og:description", content: "Conheça quem faz a casa acontecer." },
+      { property: "og:title", content: equipeContent.meta.ogTitle },
+      { property: "og:description", content: equipeContent.meta.ogDescription },
       { property: "og:url", content: "/equipe" },
     ],
     links: [{ rel: "canonical", href: "/equipe" }],
@@ -18,44 +19,17 @@ export const Route = createFileRoute("/equipe")({
   component: Equipe,
 });
 
-const team = [
-  {
-    group: "Coordenação",
-    members: [
-      { name: "Pastor Antônio Ribeiro", role: "Diretor e fundador" },
-      { name: "Cláudia Ribeiro", role: "Coordenadora administrativa" },
-      { name: "Daniel Souza", role: "Coordenador de tratamento" },
-    ],
-  },
-  {
-    group: "Equipe técnica",
-    members: [
-      { name: "Dra. Helena Martins", role: "Médica voluntária" },
-      { name: "Roberto Lima", role: "Psicólogo" },
-      { name: "Frei Inácio", role: "Capelão" },
-    ],
-  },
-  {
-    group: "Conselho espiritual",
-    members: [
-      { name: "Pastor Eliel Cunha", role: "Igreja Batista da Restauração" },
-      { name: "Pastor Marcos Vieira", role: "Comunidade Cristã Aliança" },
-      { name: "Diácono Pedro Alves", role: "Paróquia Bom Pastor" },
-    ],
-  },
-];
-
 function Equipe() {
   return (
     <>
       <PageHeader
-        eyebrow="Quem cuida"
-        title="Mãos, escuta e oração todos os dias."
-        intro="Uma equipe pequena, dedicada e voluntária sustenta a rotina da casa. Somos formados por pessoas comuns chamadas a um trabalho extraordinário."
+        eyebrow={equipeContent.header.eyebrow}
+        title={equipeContent.header.title}
+        intro={equipeContent.header.intro}
       />
 
       <section className="container-page py-20 md:py-24 space-y-20">
-        {team.map((g) => (
+        {equipeContent.team.map((g) => (
           <div key={g.group}>
             <div className="flex items-baseline gap-4 mb-10">
               <span className="accent-rule" />

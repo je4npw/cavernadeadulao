@@ -6,17 +6,18 @@ import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
 import g5 from "@/assets/gallery-5.jpg";
 import g6 from "@/assets/gallery-6.jpg";
+import { galeriaContent } from "@/data/galeria/content";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
     meta: [
-      { title: "Galeria — Caverna de Adulão" },
+      { title: galeriaContent.meta.title },
       {
         name: "description",
-        content: "Imagens do espaço, das atividades e da rotina do Centro de Reabilitação.",
+        content: galeriaContent.meta.description,
       },
-      { property: "og:title", content: "Galeria — Caverna de Adulão" },
-      { property: "og:description", content: "O cotidiano da casa em imagens." },
+      { property: "og:title", content: galeriaContent.meta.ogTitle },
+      { property: "og:description", content: galeriaContent.meta.ogDescription },
       { property: "og:url", content: "/galeria" },
     ],
     links: [{ rel: "canonical", href: "/galeria" }],
@@ -24,31 +25,24 @@ export const Route = createFileRoute("/galeria")({
   component: Galeria,
 });
 
-const images = [
-  { src: g1, alt: "Mãos unidas em oração", caption: "Encontro de oração" },
-  { src: g2, alt: "Bíblia aberta junto à janela", caption: "Estudo da Palavra" },
-  { src: g3, alt: "Fachada da casa de acolhimento", caption: "Nossa casa" },
-  { src: g4, alt: "Trabalho na horta comunitária", caption: "Atividade laboral" },
-  { src: g5, alt: "Cruz ao pôr do sol", caption: "Capela ao entardecer" },
-  { src: g6, alt: "Interior da capela", caption: "Culto noturno" },
-];
+const imageAssets = [g1, g2, g3, g4, g5, g6];
 
 function Galeria() {
   return (
     <>
       <PageHeader
-        eyebrow="O dia a dia"
-        title="Imagens da casa."
-        intro="O espaço, as atividades e o tempo que passa devagar — registros simples do cotidiano."
+        eyebrow={galeriaContent.header.eyebrow}
+        title={galeriaContent.header.title}
+        intro={galeriaContent.header.intro}
       />
 
       <section className="container-page py-20 md:py-24">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {images.map((img, i) => (
+          {galeriaContent.images.map((img, i) => (
             <figure key={i} className="group">
               <div className="aspect-square overflow-hidden bg-muted">
                 <img
-                  src={img.src}
+                  src={imageAssets[i]}
                   alt={img.alt}
                   width={1024}
                   height={1024}

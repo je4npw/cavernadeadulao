@@ -1,17 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { contatoContent } from "@/data/contato/content";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — Caverna de Adulão" },
+      { title: contatoContent.meta.title },
       {
         name: "description",
-        content: "Endereço, telefone, e-mail e horário de visitas do Centro de Reabilitação Caverna de Adulão.",
+        content: contatoContent.meta.description,
       },
-      { property: "og:title", content: "Contato — Caverna de Adulão" },
-      { property: "og:description", content: "Fale com a equipe da casa." },
+      { property: "og:title", content: contatoContent.meta.ogTitle },
+      { property: "og:description", content: contatoContent.meta.ogDescription },
       { property: "og:url", content: "/contato" },
     ],
     links: [{ rel: "canonical", href: "/contato" }],
@@ -19,27 +20,20 @@ export const Route = createFileRoute("/contato")({
   component: Contato,
 });
 
-const info = [
-  { icon: MapPin, label: "Endereço", value: "Estrada do Retiro, km 12\nZona Rural — CEP 00000-000" },
-  { icon: Phone, label: "Telefone / WhatsApp", value: "(00) 00000-0000" },
-  { icon: Mail, label: "E-mail", value: "contato@cavernadeadulao.org.br" },
-  { icon: Clock, label: "Visitas", value: "Sábados, das 14h às 17h\n(agendamento recomendado)" },
-];
-
 function Contato() {
   return (
     <>
       <PageHeader
-        eyebrow="Fale conosco"
-        title="A porta está aberta."
-        intro="Para informações sobre admissão, doações, voluntariado ou visitas, use o canal de sua preferência. Respondemos em até 48 horas."
+        eyebrow={contatoContent.header.eyebrow}
+        title={contatoContent.header.title}
+        intro={contatoContent.header.intro}
       />
 
       <section className="container-page py-20 md:py-24 grid gap-16 lg:grid-cols-2">
         {/* Info */}
         <div>
           <ul className="space-y-8">
-            {info.map((i) => (
+            {contatoContent.info.map((i) => (
               <li key={i.label} className="flex gap-5">
                 <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center border border-accent/40 text-accent">
                   <i.icon className="h-4 w-4" />
@@ -62,16 +56,16 @@ function Contato() {
           className="border border-border bg-muted/30 p-8 md:p-10 space-y-5"
           onSubmit={(e) => {
             e.preventDefault();
-            alert("Mensagem registrada. Em breve um voluntário entrará em contato.");
+            alert(contatoContent.form.successMessage);
           }}
         >
           <div className="text-xs uppercase tracking-[0.25em] text-accent">
-            Envie uma mensagem
+            {contatoContent.form.title}
           </div>
 
           <div>
             <label className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              Nome
+              {contatoContent.form.labels.name}
             </label>
             <input
               required
@@ -82,7 +76,7 @@ function Contato() {
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
-                E-mail
+                {contatoContent.form.labels.email}
               </label>
               <input
                 type="email"
@@ -92,7 +86,7 @@ function Contato() {
             </div>
             <div>
               <label className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
-                Telefone
+                {contatoContent.form.labels.phone}
               </label>
               <input className="mt-2 w-full bg-background border border-input px-4 py-3 text-sm focus:outline-none focus:border-primary" />
             </div>
@@ -100,20 +94,18 @@ function Contato() {
 
           <div>
             <label className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              Assunto
+              {contatoContent.form.labels.subject}
             </label>
             <select className="mt-2 w-full bg-background border border-input px-4 py-3 text-sm focus:outline-none focus:border-primary">
-              <option>Admissão</option>
-              <option>Doação</option>
-              <option>Voluntariado</option>
-              <option>Visita</option>
-              <option>Outro</option>
+              {contatoContent.form.subjects.map((s) => (
+                <option key={s}>{s}</option>
+              ))}
             </select>
           </div>
 
           <div>
             <label className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              Mensagem
+              {contatoContent.form.labels.message}
             </label>
             <textarea
               required
@@ -126,7 +118,7 @@ function Contato() {
             type="submit"
             className="w-full rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:bg-secondary"
           >
-            Enviar mensagem
+            {contatoContent.form.submitButton}
           </button>
         </form>
       </section>
@@ -138,10 +130,10 @@ function Contato() {
             <div className="text-center">
               <MapPin className="mx-auto h-8 w-8 text-accent" />
               <div className="mt-3 font-serif text-xl text-primary">
-                Estrada do Retiro, km 12
+                {contatoContent.map.address}
               </div>
               <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">
-                Mapa em breve
+                {contatoContent.map.placeholder}
               </div>
             </div>
           </div>
