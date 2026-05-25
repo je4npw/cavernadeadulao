@@ -69,10 +69,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
+    title: "Caverna de Adulão — Centro de Reabilitação",
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Caverna de Adulão — Centro de Reabilitação" },
       {
         name: "description",
         content:
@@ -88,11 +88,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Caverna de Adulão" },
       { name: "twitter:title", content: "Caverna de Adulão — Centro de Reabilitação" },
-      { name: "description", content: "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais" },
-      { property: "og:description", content: "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais" },
-      { name: "twitter:description", content: "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3ea95f25-61f3-4b3c-836d-e13c8e2e102e/id-preview-6663e109--c3d40e12-b2c3-4068-8feb-026c02222493.lovable.app-1779730516844.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3ea95f25-61f3-4b3c-836d-e13c8e2e102e/id-preview-6663e109--c3d40e12-b2c3-4068-8feb-026c02222493.lovable.app-1779730516844.png" },
+      {
+        name: "description",
+        content:
+          "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais",
+      },
+      {
+        property: "og:description",
+        content:
+          "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "1 Samuel 22 - Acolhimento para pessoas com Transtornos por Uso de Substâncias e outros transtornos comportamentais",
+      },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
@@ -107,6 +117,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
+        <title>Caverna de Adulão</title>
         <HeadContent />
       </head>
       <body>

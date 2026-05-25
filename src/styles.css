@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
+@import "tw-animate-css";
 @import "tailwindcss" source(none);
 @source "../src";
-@import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -84,20 +84,22 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-sans);
+    font-family: var(--font-sans), serif;
     font-feature-settings: "ss01", "cv01";
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: var(--font-serif);
+    font-family: var(--font-serif), serif;
     letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
-  .font-serif { font-family: var(--font-serif); }
-  .font-sans { font-family: var(--font-sans); }
+  .font-serif {
+    font-family: var(--font-serif), serif; }
+  .font-sans {
+    font-family: var(--font-sans), serif; }
 
   .container-page {
     width: 100%;
