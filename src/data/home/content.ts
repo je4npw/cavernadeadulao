@@ -10,7 +10,7 @@ export const homeContent = {
     eyebrow: "Centro de Reabilitação",
     title: "Refúgio, restauração e nova vida.",
     description:
-      "Um lugar para os que estão em aperto encontrarem cuidado, propósito e a dignidade de recomeçar. Há mais de uma década, recebemos homens que buscam libertação da dependência química por meio do evangelho.",
+      "Um lugar para os que estão em aperto encontrarem cuidado, propósito e a dignidade de recomeçar. Recebemos homens que buscam libertação da dependência química por meio do evangelho.",
     buttons: {
       help: { to: "/como-ajudar", label: "Quero ajudar" },
       treatment: { to: "/tratamento", label: "Conheça o tratamento" },

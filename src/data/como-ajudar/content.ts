@@ -19,7 +19,7 @@ export const comoAjudarContent = {
     description:
       "A forma mais simples e direta de ajudar. Toda doação é registrada e prestada conta no relatório anual da casa.",
     beneficiary: "Associação Caverna de Adulão",
-    cnpj: "00.000.000/0001-00",
+    cnpj: "55.602.351/0001-64",
     copyButton: {
       idle: "Copiar chave",
       copied: "Copiado!",
@@ -45,11 +45,11 @@ export const comoAjudarContent = {
       },
       {
         title: "Voluntariado",
-        body: "Profissionais de saúde, professores, oficineiros, motoristas e pessoas dispostas a servir nos cultos e mutirões.",
+        body: "Profissionais de saúde, professores, oficineiros, motoristas e pessoas dispostas a servir e abraçar.",
       },
       {
         title: "Oração",
-        body: "Adote a casa em suas orações. Receba nossa carta mensal com pedidos e atualizações do trabalho.",
+        body: "Adote a casa em suas orações.",
       },
     ],
     contactButton: "Entrar em contato para doar ou se voluntariar",

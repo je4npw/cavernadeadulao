@@ -14,7 +14,7 @@ export const missaoContent = {
   },
   history: {
     paragraphs: [
-      "O Centro de Reabilitação Caverna de Adulão nasceu da convicção de que toda vida pode ser restaurada. Há mais de uma década recebemos homens que enfrentam a dependência química e o abandono, oferecendo um caminho de cuidado integral.",
+      "O Centro de Reabilitação Caverna de Adulão nasceu da convicção de que toda vida pode ser restaurada. Recebemos homens que enfrentam a dependência química e o abandono, oferecendo um caminho de cuidado integral.",
       "Sustentados pela fé cristã, acreditamos que a transformação acontece quando se unem trabalho, comunhão, escuta e o encontro pessoal com Deus. Nossa casa é simples — assim como a caverna que lhe dá nome — mas cada detalhe é pensado para acolher, dar tempo e devolver propósito.",
       "Não somos hospital nem clínica psiquiátrica. Somos uma comunidade terapêutica de base cristã, mantida por doações de pessoas, igrejas e parceiros que acreditam neste trabalho.",
     ],
@@ -25,8 +25,11 @@ export const missaoContent = {
     title: "Quatro princípios que guiam a vida na casa.",
     items: [
       { title: "Acolhimento", body: "Receber sem julgamento quem chega à porta da casa." },
-      { title: "Dignidade", body: "Cuidar do corpo, da alma e do espírito com respeito." },
-      { title: "Disciplina", body: "Rotina, trabalho e oração como caminho de restauração." },
+      { title: "Dignidade", body: "Cuidar do corpo, alma, espírito e família com respeito." },
+      {
+        title: "Disciplina",
+        body: "Rotina, espiritualidade e convivência como caminho de restauração.",
+      },
       { title: "Comunhão", body: "Caminhar lado a lado em uma comunidade de fé e amizade." },
     ],
   },

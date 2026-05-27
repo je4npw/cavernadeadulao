@@ -7,33 +7,39 @@ export const equipeContent = {
   },
   header: {
     eyebrow: "Quem cuida",
-    title: "Mãos, escuta e oração todos os dias.",
+    title: "Mãos, escuta e coração todos os dias.",
     intro:
-      "Uma equipe pequena, dedicada e voluntária sustenta a rotina da casa. Somos formados por pessoas comuns chamadas a um trabalho extraordinário.",
+      "Uma equipe dedicada e voluntária sustenta a rotina da casa. Somos formados por pessoas comuns chamadas a um trabalho extraordinário.",
   },
   team: [
     {
-      group: "Coordenação",
+      group: "Direção Geral",
       members: [
-        { name: "Pastor Antônio Ribeiro", role: "Diretor e fundador" },
-        { name: "Cláudia Ribeiro", role: "Coordenadora administrativa" },
-        { name: "Daniel Souza", role: "Coordenador de tratamento" },
+        { name: "Natanael Darlan Tipcke de Freitas", role: "Pastor, Fundador e Diretor" },
+        { name: "Sarah Ludmila Rodrigues de Freitas", role: "Secretária" },
+        { name: "", role: "" },
       ],
     },
     {
-      group: "Equipe técnica",
+      group: "Equipe Técnica",
       members: [
-        { name: "Dra. Helena Martins", role: "Médica voluntária" },
-        { name: "Roberto Lima", role: "Psicólogo" },
-        { name: "Frei Inácio", role: "Capelão" },
+        {
+          name: "Jean Patrick Wilhvock",
+          role: "Coordenador e Responsável Técnico. Cientista da Computação",
+        },
+        { name: "Adriana Lamin Soares", role: "Psicóloga e Responsável Técnica Substituta" },
+        { name: "Lucinéa Almeida", role: "Psicóloga, Psicoterapeuta, TCC" },
       ],
     },
     {
-      group: "Conselho espiritual",
+      group: "Equipe Operacional",
       members: [
-        { name: "Pastor Eliel Cunha", role: "Igreja Batista da Restauração" },
-        { name: "Pastor Marcos Vieira", role: "Comunidade Cristã Aliança" },
-        { name: "Diácono Pedro Alves", role: "Paróquia Bom Pastor" },
+        { name: "Inaldo Jorge Aquino de França", role: "Monitor, Demandas Externas" },
+        { name: "Shirley Tipcke de França", role: "Monitora, Conselheira Familiar" },
+        { name: "Franco Ezequiel Giordano", role: "Monitor e Captador de Recursos" },
+        { name: "Rafael Novaes", role: "Monitor e Captador de Recursos" },
+        { name: "Ednei da Silva e Sá", role: "Captador de Recursos" },
+        { name: "", role: "" },
       ],
     },
   ],

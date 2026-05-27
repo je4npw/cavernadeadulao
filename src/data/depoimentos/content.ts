@@ -7,7 +7,7 @@ export const depoimentosContent = {
   },
   header: {
     eyebrow: "Histórias",
-    title: "Vidas que voltaram a respirar.",
+    title: "Vidas que voltaram a sorrir.",
     intro:
       "Cada nome aqui representa anos de espera de uma família e a coragem diária de recomeçar. Os textos foram compartilhados com autorização.",
   },
