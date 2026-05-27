@@ -109,6 +109,51 @@ function RootShell({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function() {
+              function toggleMenu(forceClose) {
+                const btn = document.querySelector('[data-mobile-menu-button]');
+                const menu = document.getElementById('mobile-menu');
+                if (!btn || !menu) return;
+
+                const isOpen = btn.getAttribute('data-state') === 'open';
+                const nextState = forceClose === true ? false : !isOpen;
+
+                if (nextState) {
+                  btn.setAttribute('data-state', 'open');
+                  menu.setAttribute('data-state', 'open');
+                  menu.classList.remove('hidden');
+                  // Trigger transition
+                  setTimeout(() => {
+                    menu.style.opacity = '1';
+                    menu.style.transform = 'translateY(0)';
+                  }, 10);
+                } else {
+                  btn.setAttribute('data-state', 'closed');
+                  menu.setAttribute('data-state', 'closed');
+                  menu.style.opacity = '0';
+                  menu.style.transform = 'translateY(-8px)';
+                  setTimeout(() => {
+                    if (menu.getAttribute('data-state') === 'closed') {
+                      menu.classList.add('hidden');
+                    }
+                  }, 300);
+                }
+              }
+
+              document.addEventListener('click', (e) => {
+                if (e.target.closest('[data-mobile-menu-button]')) {
+                  toggleMenu();
+                } else if (e.target.closest('[data-mobile-menu-links] a')) {
+                  toggleMenu(true);
+                }
+              });
+            })();
+          `,
+          }}
+        />
         <Scripts />
       </body>
     </html>

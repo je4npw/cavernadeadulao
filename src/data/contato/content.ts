@@ -12,17 +12,21 @@ export const contatoContent = {
     eyebrow: "Fale conosco",
     title: "A porta está aberta.",
     intro:
-      "Para informações sobre admissão, doações, voluntariado ou visitas, use o canal de sua preferência. Respondemos em até 48 horas.",
+      "Para informações sobre admissão, doações, voluntariado ou visitas, use o canal de sua preferência. Respondemos o mais breve possível.",
   },
   info: [
     {
       icon: MapPin,
       label: "Endereço",
-      value: "Estrada do Retiro, km 12\nZona Rural — CEP 00000-000",
+      value: "Estrada Municipal do Rio Galego, km 8\nZona Rural — CEP 884300-000",
     },
-    { icon: Phone, label: "Telefone / WhatsApp", value: "(00) 00000-0000" },
-    { icon: Mail, label: "E-mail", value: "contato@cavernadeadulao.org.br" },
-    { icon: Clock, label: "Visitas", value: "Sábados, das 14h às 17h\n(agendamento recomendado)" },
+    { icon: Phone, label: "Telefone / WhatsApp", value: "(47) 99791-5103" },
+    { icon: Mail, label: "E-mail", value: "admadulao@gmail.com" },
+    {
+      icon: Clock,
+      label: "Visitas",
+      value: "2º Domingo do mês, das 10h às 17h\n(agendamento recomendado)",
+    },
   ],
   form: {
     title: "Envie uma mensagem",
