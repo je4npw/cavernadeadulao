@@ -31,24 +31,31 @@ A React-based website for a Christian rehabilitation center, built with **TanSta
 ## Building and Running
 
 ### Development
+
 ```bash
 bun run dev
 ```
+
 Starts the Vite development server.
 
 ### Build for Production
+
 ```bash
 bun run build
 ```
+
 Generates a production build optimized for Cloudflare.
 
 ### Preview Production Build
+
 ```bash
 bun run preview
 ```
+
 Previews the production build locally.
 
 ### Linting and Formatting
+
 ```bash
 bun run lint
 bun run format

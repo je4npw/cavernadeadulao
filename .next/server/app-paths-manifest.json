@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/como-ajudar/page": "app/como-ajudar/page.js",
+  "/equipe/page": "app/equipe/page.js",
+  "/galeria/page": "app/galeria/page.js",
+  "/contato/page": "app/contato/page.js",
+  "/missao/page": "app/missao/page.js"
+}

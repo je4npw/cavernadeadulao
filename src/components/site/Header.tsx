@@ -1,16 +1,20 @@
 "use client";
 
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { globalContent } from "@/data/global/content";
 
 export function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="container-page flex h-20 items-center justify-between gap-6">
-        <Link to="/" className="flex items-center gap-3">
-          <img
+        <Link href="/" className="flex items-center gap-3">
+          <Image
             src={logo}
             alt={globalContent.site.name}
             width={48}
@@ -26,17 +30,20 @@ export function Header() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7">
-          {globalContent.nav.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="text-sm text-foreground/75 transition hover:text-accent"
-              activeProps={{ className: "text-accent" }}
-              activeOptions={{ exact: item.to === "/" }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {globalContent.nav.map((item) => {
+            const isActive = item.to === "/" ? pathname === "/" : pathname === item.to;
+            return (
+              <Link
+                key={item.to}
+                href={item.to}
+                className={`text-sm transition hover:text-accent ${
+                  isActive ? "text-accent" : "text-foreground/75"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <button
@@ -52,20 +59,23 @@ export function Header() {
 
       <div
         id="mobile-menu"
-        className="hidden lg:hidden border-t border-border bg-background shadow-xl transition-all duration-300 opacity-0 -translate-y-2 data-[state=open]:block data-[state=open]:opacity-100 data-[state=open]:translate-y-0"
+        className="hidden lg:hidden absolute left-0 right-0 top-full border-b border-border bg-background shadow-xl transition-all duration-300 opacity-0 -translate-y-2 data-[state=open]:block data-[state=open]:opacity-100 data-[state=open]:translate-y-0"
       >
         <nav className="container-page flex flex-col py-4" data-mobile-menu-links>
-          {globalContent.nav.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="py-3 text-base text-foreground/80 border-b border-border/40 last:border-0"
-              activeProps={{ className: "text-accent" }}
-              activeOptions={{ exact: item.to === "/" }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {globalContent.nav.map((item) => {
+            const isActive = item.to === "/" ? pathname === "/" : pathname === item.to;
+            return (
+              <Link
+                key={item.to}
+                href={item.to}
+                className={`py-3 text-base border-b border-border/40 last:border-0 ${
+                  isActive ? "text-accent" : "text-foreground/80"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>
