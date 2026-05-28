@@ -13,28 +13,28 @@ export const depoimentosContent = {
   },
   stories: [
     {
-      name: "Marcos, 38 anos",
-      when: "Concluiu o programa em 2023",
+      name: "Sebastião",
+      when: "Alta em 2026",
       quote:
-        "Cheguei aqui sem rumo, sem família e sem esperança. Em nove meses reencontrei meu pai, voltei a ler, voltei a sonhar. Hoje trabalho como marceneiro e sirvo à minha igreja.",
+        "Cheguei destruído e saí renovado; estava perdido e fui encontrado. Já tinha passado por outros três lugares, mas nada parecido com a Caverna de Adulão. Ali fui fortalecido e preparado para o mundo novamente. Só tenho a agradecer a todos que me ajudaram!",
     },
     {
-      name: "Pedro, 45 anos",
-      when: "Concluiu o programa em 2022",
+      name: "David",
+      when: "Alta em 2026",
       quote:
-        "Eu já tinha tentado outras casas e nenhuma deu certo. A Caverna não foi só um tratamento, foi uma família. Aprendi a olhar para o outro e a pedir perdão.",
+        "Ao longo da minha luta contra a dependência química, passei por diversas outras casas e nenhuma deu certo. Foram 20 anos de batalha. A Caverna de Adulão não foi apenas um tratamento, foi uma família onde encontrei acolhimento, apoio e, o principal: esperança para uma nova vida. Ali, aprendi a pedir perdão e a olhar para o outro como Deus me olha — com amor. Hoje, não me sinto mais sozinho e vazio. Tenho um Pai que me ama, uma família que me acolhe nos momentos de dificuldade e a certeza de que sou mais um guerreiro forjado na Caverna de Adulão.",
     },
     {
-      name: "Joaquim, 29 anos",
-      when: "Em tratamento — fase 03",
+      name: "Anônimo",
+      when: "Alta em 2026",
       quote:
-        "A rotina aqui me devolveu o controle. As manhãs cedo, o trabalho na horta, o estudo da Palavra. Pela primeira vez em anos eu durmo em paz.",
+        "A rotina aqui me devolveu o controle, e a equipe me ajudou a voltar para a minha terra natal. Hoje estou de volta com minha família e amigos podendo viver uma vida diferente.",
     },
     {
       name: "Família de um interno",
-      when: "Carta recebida em 2024",
+      when: "Depoimento pelo whatsapp em 2026",
       quote:
-        "Recebemos nosso filho de volta. Mas mais que isso: recebemos um homem inteiro, com olhos no futuro. Não temos como agradecer o cuidado que ele encontrou nessa casa.",
+        "Recebi meu marido de volta. Mas mais que isso: recebemos um homem inteiro, com olhos no futuro. Não temos como agradecer o cuidado que ele encontrou nessa casa.",
     },
   ],
 };
