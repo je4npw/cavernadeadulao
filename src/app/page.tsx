@@ -1,40 +1,36 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import logo from "@/assets/logo.png";
 import { homeContent } from "@/data/home/content";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: homeContent.meta.title },
-      {
-        name: "description",
-        content: homeContent.meta.description,
-      },
-      { property: "og:title", content: homeContent.meta.ogTitle },
-      {
-        property: "og:description",
-        content: homeContent.meta.ogDescription,
-      },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: Home,
-});
+export const metadata: Metadata = {
+  title: homeContent.meta.title,
+  description: homeContent.meta.description,
+  openGraph: {
+    title: homeContent.meta.ogTitle,
+    description: homeContent.meta.ogDescription,
+    url: "/",
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
 
-function Home() {
+export default function Home() {
   return (
     <>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0">
-          <img
+          <Image
             src={hero}
             alt=""
             width={1920}
             height={1280}
+            priority
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
@@ -42,7 +38,7 @@ function Home() {
 
         <div className="relative container-page py-24 md:py-36">
           <div className="max-w-2xl">
-            <img
+            <Image
               src={logo}
               alt={homeContent.meta.ogTitle}
               width={96}
@@ -65,14 +61,14 @@ function Home() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                to={homeContent.hero.buttons.help.to}
+                href={homeContent.hero.buttons.help.to}
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:bg-secondary"
               >
                 {homeContent.hero.buttons.help.label}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to={homeContent.hero.buttons.treatment.to}
+                href={homeContent.hero.buttons.treatment.to}
                 className="inline-flex items-center gap-2 rounded-md border border-primary/30 px-6 py-3 text-sm font-medium text-primary transition hover:border-primary hover:bg-primary/5"
               >
                 {homeContent.hero.buttons.treatment.label}
@@ -115,7 +111,7 @@ function Home() {
             {homeContent.highlights.items.map((h) => (
               <Link
                 key={h.to}
-                to={h.to}
+                href={h.to}
                 className="group block bg-background p-8 md:p-10 transition hover:bg-muted/40"
               >
                 <div className="text-xs tracking-[0.3em] text-accent">{h.eyebrow}</div>

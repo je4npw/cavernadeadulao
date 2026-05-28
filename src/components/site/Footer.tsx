@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
+import Image from "next/image";
 import logo from "@/assets/logo.png";
 import { globalContent } from "@/data/global/content";
 
@@ -10,7 +11,7 @@ export function Footer() {
       <div className="container-page grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-5">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="" width={56} height={56} className="h-14 w-14" />
+            <Image src={logo} alt="" width={56} height={56} className="h-14 w-14" />
             <div>
               <div className="font-serif text-lg">{site.name}</div>
               <div className="text-xs uppercase tracking-[0.2em] opacity-70">
@@ -33,7 +34,10 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             {footer.sections.navigation.links.map(({ to, label }) => (
               <li key={to}>
-                <Link to={to} className="opacity-80 hover:opacity-100 hover:text-accent transition">
+                <Link
+                  href={to}
+                  className="opacity-80 hover:opacity-100 hover:text-accent transition"
+                >
                   {label}
                 </Link>
               </li>

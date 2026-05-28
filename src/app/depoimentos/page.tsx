@@ -1,25 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/site/PageHeader";
 import { depoimentosContent } from "@/data/depoimentos/content";
 
-export const Route = createFileRoute("/depoimentos")({
-  head: () => ({
-    meta: [
-      { title: depoimentosContent.meta.title },
-      {
-        name: "description",
-        content: depoimentosContent.meta.description,
-      },
-      { property: "og:title", content: depoimentosContent.meta.ogTitle },
-      { property: "og:description", content: depoimentosContent.meta.ogDescription },
-      { property: "og:url", content: "/depoimentos" },
-    ],
-    links: [{ rel: "canonical", href: "/depoimentos" }],
-  }),
-  component: Depoimentos,
-});
+export const metadata: Metadata = {
+  title: depoimentosContent.meta.title,
+  description: depoimentosContent.meta.description,
+  openGraph: {
+    title: depoimentosContent.meta.ogTitle,
+    description: depoimentosContent.meta.ogDescription,
+    url: "/depoimentos",
+  },
+  alternates: {
+    canonical: "/depoimentos",
+  },
+};
 
-function Depoimentos() {
+export default function Depoimentos() {
   return (
     <>
       <PageHeader

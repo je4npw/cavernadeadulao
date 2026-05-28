@@ -1,29 +1,23 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/site/PageHeader";
-import gallery5 from "@/assets/gallery-5.jpg";
+import gallery5 from "@/assets/gallery-1.jpg";
 import { missaoContent } from "@/data/missao/content";
 
-export const Route = createFileRoute("/missao")({
-  head: () => ({
-    meta: [
-      { title: missaoContent.meta.title },
-      {
-        name: "description",
-        content: missaoContent.meta.description,
-      },
-      { property: "og:title", content: missaoContent.meta.ogTitle },
-      {
-        property: "og:description",
-        content: missaoContent.meta.ogDescription,
-      },
-      { property: "og:url", content: "/missao" },
-    ],
-    links: [{ rel: "canonical", href: "/missao" }],
-  }),
-  component: Missao,
-});
+export const metadata: Metadata = {
+  title: missaoContent.meta.title,
+  description: missaoContent.meta.description,
+  openGraph: {
+    title: missaoContent.meta.ogTitle,
+    description: missaoContent.meta.ogDescription,
+    url: "/missao",
+  },
+  alternates: {
+    canonical: "/missao",
+  },
+};
 
-function Missao() {
+export default function Missao() {
   return (
     <>
       <PageHeader
@@ -40,12 +34,11 @@ function Missao() {
         </div>
 
         <div>
-          <img
+          <Image
             src={gallery5}
             alt={missaoContent.history.imageAlt}
             width={1024}
             height={1024}
-            loading="lazy"
             className="w-full aspect-square object-cover"
           />
         </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { contatoContent } from "@/data/contato/content";
 
 export default function ContactForm() {

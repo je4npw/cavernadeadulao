@@ -1,25 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/site/PageHeader";
 import { contatoContent } from "@/data/contato/content";
 
-export const Route = createFileRoute("/contato")({
-  head: () => ({
-    meta: [
-      { title: contatoContent.meta.title },
-      {
-        name: "description",
-        content: contatoContent.meta.description,
-      },
-      { property: "og:title", content: contatoContent.meta.ogTitle },
-      { property: "og:description", content: contatoContent.meta.ogDescription },
-      { property: "og:url", content: "/contato" },
-    ],
-    links: [{ rel: "canonical", href: "/contato" }],
-  }),
-  component: Contato,
-});
+export const metadata: Metadata = {
+  title: contatoContent.meta.title,
+  description: contatoContent.meta.description,
+  openGraph: {
+    title: contatoContent.meta.ogTitle,
+    description: contatoContent.meta.ogDescription,
+    url: "/contato",
+  },
+  alternates: {
+    canonical: "/contato",
+  },
+};
 
-function Contato() {
+export default function Contato() {
   return (
     <>
       <PageHeader

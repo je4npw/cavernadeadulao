@@ -1,25 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/site/PageHeader";
 import { equipeContent } from "@/data/equipe/content";
 
-export const Route = createFileRoute("/equipe")({
-  head: () => ({
-    meta: [
-      { title: equipeContent.meta.title },
-      {
-        name: "description",
-        content: equipeContent.meta.description,
-      },
-      { property: "og:title", content: equipeContent.meta.ogTitle },
-      { property: "og:description", content: equipeContent.meta.ogDescription },
-      { property: "og:url", content: "/equipe" },
-    ],
-    links: [{ rel: "canonical", href: "/equipe" }],
-  }),
-  component: Equipe,
-});
+export const metadata: Metadata = {
+  title: equipeContent.meta.title,
+  description: equipeContent.meta.description,
+  openGraph: {
+    title: equipeContent.meta.ogTitle,
+    description: equipeContent.meta.ogDescription,
+    url: "/equipe",
+  },
+  alternates: {
+    canonical: "/equipe",
+  },
+};
 
-function Equipe() {
+export default function Equipe() {
   return (
     <>
       <PageHeader

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
 @import "tw-animate-css";
 @import "tailwindcss" source(none);
-@source "../src";
+@source "..";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -89,7 +89,11 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: var(--font-serif), serif;
     letter-spacing: -0.01em;
   }
@@ -97,9 +101,11 @@
 
 @layer utilities {
   .font-serif {
-    font-family: var(--font-serif), serif; }
+    font-family: var(--font-serif), serif;
+  }
   .font-sans {
-    font-family: var(--font-sans), serif; }
+    font-family: var(--font-sans), serif;
+  }
 
   .container-page {
     width: 100%;

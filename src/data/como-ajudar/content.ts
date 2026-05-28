@@ -13,7 +13,7 @@ export const comoAjudarContent = {
       "A casa vive de doações. Cada contribuição — pequena ou grande — paga alimento, contas, materiais e mantém a porta aberta para quem chega.",
   },
   pix: {
-    key: "contato@cavernadeadulao.org.br",
+    key: "admadulao@gmail.com",
     eyebrow: "Doação via PIX",
     title: "Chave PIX da casa",
     description:

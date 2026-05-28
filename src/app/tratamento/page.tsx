@@ -1,28 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/site/PageHeader";
 import { tratamentoContent } from "@/data/tratamento/content";
 
-export const Route = createFileRoute("/tratamento")({
-  head: () => ({
-    meta: [
-      { title: tratamentoContent.meta.title },
-      {
-        name: "description",
-        content: tratamentoContent.meta.description,
-      },
-      { property: "og:title", content: tratamentoContent.meta.ogTitle },
-      {
-        property: "og:description",
-        content: tratamentoContent.meta.ogDescription,
-      },
-      { property: "og:url", content: "/tratamento" },
-    ],
-    links: [{ rel: "canonical", href: "/tratamento" }],
-  }),
-  component: Tratamento,
-});
+export const metadata: Metadata = {
+  title: tratamentoContent.meta.title,
+  description: tratamentoContent.meta.description,
+  openGraph: {
+    title: tratamentoContent.meta.ogTitle,
+    description: tratamentoContent.meta.ogDescription,
+    url: "/tratamento",
+  },
+  alternates: {
+    canonical: "/tratamento",
+  },
+};
 
-function Tratamento() {
+export default function Tratamento() {
   return (
     <>
       <PageHeader
