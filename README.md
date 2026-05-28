@@ -81,3 +81,5 @@ O projeto está totalmente preparado para hospedagem na **Vercel**:
 2. A Vercel detectará automaticamente que o framework é **Next.js**.
 3. Configure o comando de build padrão (`next build`) e o diretório de saída (`.next`).
 4. Cada push/commit na branch principal disparará automaticamente um deploy de produção com otimização automática de imagens e CDN global.
+
+Criado por Je4nPw
