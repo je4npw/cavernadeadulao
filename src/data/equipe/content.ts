@@ -23,9 +23,9 @@ export const equipeContent = {
     {
       group: "Equipe Técnica",
       members: [
+        { name: "Jean Patrick Wilhvock", role: "Coordenador e Responsável Técnico" },
         { name: "Adriana Lamin Soares", role: "Psicóloga e Responsável Técnica Substituta" },
         { name: "Lucinéa Almeida", role: "Psicóloga, Psicoterapeuta, TCC" },
-        { name: "", role: "" },
       ],
     },
     {
