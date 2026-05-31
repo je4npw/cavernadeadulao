@@ -40,7 +40,7 @@ export function PixCopyBox() {
         </div>
         <div>
           <span className="text-muted-foreground">CNPJ: </span>
-          {comoAjudarContent.pix.cnpj}
+          {comoAjudarContent.pix.chave}
         </div>
       </div>
     </div>

@@ -65,7 +65,7 @@ export default function ComoAjudar() {
 
         <div className="mt-16">
           <Link
-            href="https://wa.me/554799791510"
+            href="https://wa.me/5547997915103"
             className="inline-flex items-center gap-2 rounded-md border border-primary/30 px-6 py-3 text-sm font-medium text-primary transition hover:bg-primary/5"
           >
             {comoAjudarContent.otherWays.contactButton}

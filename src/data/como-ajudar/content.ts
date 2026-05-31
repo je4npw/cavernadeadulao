@@ -19,7 +19,7 @@ export const comoAjudarContent = {
     description:
       "A forma mais simples e direta de ajudar. Toda doação é registrada e prestada conta no relatório anual da casa.",
     beneficiary: "Associação Caverna de Adulão",
-    cnpj: "55.602.351/0001-64",
+    chave: "admaadulao@gmail.com",
     copyButton: {
       idle: "Copiar chave",
       copied: "Copiado!",
