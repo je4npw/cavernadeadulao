@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "@/components/site/PageHeader";
-import gallery5 from "@/assets/gallery-1.jpg";
 import { missaoContent } from "@/data/missao/content";
 
 export const metadata: Metadata = {
@@ -35,7 +34,7 @@ export default function Missao() {
 
         <div>
           <Image
-            src={gallery5}
+            src="/galeria/74.webp"
             alt={missaoContent.history.imageAlt}
             width={1024}
             height={1024}
@@ -53,14 +52,11 @@ export default function Missao() {
             {missaoContent.values.title}
           </h2>
 
-          <div className="mt-12 grid gap-px bg-border md:grid-cols-4">
-            {missaoContent.values.items.map((v, i) => (
-              <div key={v.title} className="bg-background p-8">
-                <div className="font-serif text-accent text-sm">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <h3 className="mt-3 font-serif text-xl text-primary">{v.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/70">{v.body}</p>
+          <div className="mt-16 grid gap-10 md:grid-cols-3">
+            {missaoContent.values.items.map((item, i) => (
+              <div key={i} className="space-y-4">
+                <h3 className="font-serif text-xl text-primary">{item.title}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>

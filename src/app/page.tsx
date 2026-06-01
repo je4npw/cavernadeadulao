@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero.webp";
 import logo from "@/assets/logo.png";
 import { homeContent } from "@/data/home/content";
 
@@ -33,7 +33,7 @@ export default function Home() {
             priority
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
+          <div className="absolute inset-0 bg-linear-to-r from-background via-background/85 to-background/20" />
         </div>
 
         <div className="relative container-page py-24 md:py-36">

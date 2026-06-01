@@ -4,11 +4,12 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "bun scripts/update-gallery-count.ts && next dev",
+    "build": "bun scripts/update-gallery-count.ts && next build",
     "start": "next start",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "update-gallery": "bun scripts/update-gallery-count.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

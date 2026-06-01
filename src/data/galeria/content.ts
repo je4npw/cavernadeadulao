@@ -10,12 +10,8 @@ export const galeriaContent = {
     title: "Imagens da casa.",
     intro: "O espaço, as atividades e o tempo que passa devagar — registros simples do cotidiano.",
   },
-  images: [
-    { alt: "Mãos unidas em oração", caption: "Encontro de oração" },
-    { alt: "Bíblia aberta junto à janela", caption: "Estudo da Palavra" },
-    { alt: "Fachada da casa de acolhimento", caption: "Nossa casa" },
-    { alt: "Trabalho na horta comunitária", caption: "Atividade laboral" },
-    { alt: "Cruz ao pôr do sol", caption: "Capela ao entardecer" },
-    { alt: "Interior da capela", caption: "Culto noturno" },
-  ],
+  images: Array.from({ length: 80 }, (_, i) => ({
+    src: `/galeria/${i + 1}.webp`,
+    alt: `Imagem da galeria ${i + 1}`,
+  })),
 };
