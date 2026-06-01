@@ -1,32 +1,28 @@
 # Caverna de Adulão — Centro de Reabilitação
 
-A React-based website for a Christian rehabilitation center, built with **TanStack Start**, **Vite**, and **Tailwind CSS**.
+A React-based website for a Christian rehabilitation center, built with **Next.js**, **React**, and **Tailwind CSS**.
 
 ## Project Overview
 
 - **Purpose:** Provide information about the "Caverna de Adulão" rehabilitation center, including mission, services (treatment), team, and how to help.
-- **Architecture:** Server-Side Rendered (SSR) application using TanStack Start for routing, data fetching, and hydration.
+- **Architecture:** Next.js App Router for routing and server-side rendering.
 - **Tech Stack:**
-  - **Framework:** [TanStack Start](https://tanstack.com/router/latest/docs/framework/react/start/overview) (React + TanStack Router + TanStack Query).
+  - **Framework:** [Next.js](https://nextjs.org/) (React).
   - **Language:** TypeScript.
   - **Runtime & Package Manager:** [Bun](https://bun.sh/).
-  - **Build Tool:** [Vite](https://vitejs.dev/).
   - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/).
   - **UI Components:** [Shadcn UI](https://ui.shadcn.com/) (Radix UI + Lucide React).
-  - **Platform:** [Cloudflare Pages/Workers](https://workers.cloudflare.com/).
 
 ## Directory Structure
 
-- `src/routes/`: File-based routing using TanStack Router. Includes `__root.tsx` for the main layout.
+- `src/app/`: File-based routing using Next.js App Router.
 - `src/components/`:
   - `ui/`: Shared Shadcn UI components.
   - `site/`: Project-specific layout components like `Header`, `Footer`, and `PageHeader`.
-- `src/lib/`: Utility functions (`utils.ts`), error handling (`error-capture.ts`, `error-page.ts`).
+- `src/lib/`: Utility functions (`utils.ts`).
 - `src/hooks/`: Custom React hooks.
 - `src/assets/`: Images and other static assets.
-- `src/server.ts`: Custom SSR entry point for Cloudflare, featuring error wrapping.
-- `src/router.tsx`: Router instance creation and configuration.
-- `wrangler.jsonc`: Cloudflare Workers/Pages configuration.
+- `src/data/`: Static content for the pages.
 
 ## Building and Running
 
@@ -36,7 +32,7 @@ A React-based website for a Christian rehabilitation center, built with **TanSta
 bun run dev
 ```
 
-Starts the Vite development server.
+Starts the Next.js development server.
 
 ### Build for Production
 
@@ -44,15 +40,15 @@ Starts the Vite development server.
 bun run build
 ```
 
-Generates a production build optimized for Cloudflare.
+Generates an optimized production build.
 
 ### Preview Production Build
 
 ```bash
-bun run preview
+bun run start
 ```
 
-Previews the production build locally.
+Runs the production build locally.
 
 ### Linting and Formatting
 
@@ -63,9 +59,7 @@ bun run format
 
 ## Development Conventions
 
-- **Routing:** All new pages should be added as files in `src/routes/`. The route tree is automatically generated into `src/routeTree.gen.ts`.
+- **Routing:** All new pages should be added as folders with `page.tsx` in `src/app/`.
 - **UI Components:** Prefer using or extending components in `src/components/ui`. Use `cn()` utility from `@/lib/utils` for tailwind class merging.
-- **Styling:** Use Tailwind CSS utility classes. Global styles are in `src/styles.css`.
-- **Data Fetching:** Use TanStack Query (via `useQuery`, etc.) for client-side state and data fetching.
-- **Error Handling:** The project uses a custom error capture and rendering system in `src/lib/error-capture.ts` and `src/lib/error-page.ts`.
-- **SSR Entry:** The custom `src/server.ts` wraps the default TanStack Start server entry to provide branded error pages for catastrophic failures.
+- **Styling:** Use Tailwind CSS utility classes. Global styles are in `src/app/globals.css`.
+- **Data:** Use the files in `src/data/` to manage the content of the pages.

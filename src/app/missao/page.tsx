@@ -56,7 +56,7 @@ export default function Missao() {
             {missaoContent.values.items.map((item, i) => (
               <div key={i} className="space-y-4">
                 <h3 className="font-serif text-xl text-primary">{item.title}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
+                <p className="text-sm text-foreground/70 leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
