@@ -13,13 +13,13 @@ export const comoAjudarContent = {
       "A casa vive de doações. Cada contribuição — pequena ou grande — paga alimento, contas, materiais e mantém a porta aberta para quem chega.",
   },
   pix: {
-    key: "admadulao@gmail.com",
+    key: "55.602.351/0001-64",
     eyebrow: "Doação via PIX",
     title: "Chave PIX da casa",
     description:
       "A forma mais simples e direta de ajudar. Toda doação é registrada e prestada conta no relatório anual da casa.",
     beneficiary: "Associação Caverna de Adulão",
-    chave: "admaadulao@gmail.com",
+    chave: "55.602.351/0001-64",
     copyButton: {
       idle: "Copiar chave",
       copied: "Copiado!",

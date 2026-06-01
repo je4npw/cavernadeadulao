@@ -20,7 +20,7 @@ export function PixCopyBox() {
   return (
     <div className="border border-border bg-muted/40 p-8 md:p-10">
       <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-        Chave (e-mail)
+        Chave (CNPJ)
       </div>
       <div className="mt-3 font-serif text-xl md:text-2xl text-primary break-all">
         {comoAjudarContent.pix.key}
